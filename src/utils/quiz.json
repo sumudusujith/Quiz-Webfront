@@ -1,0 +1,152 @@
+{
+    "form": [
+      {
+        "id": "q1",
+        "type": "text",
+        "label": "What is your name?",
+        "required": true
+      },
+      {
+        "id": "q2",
+        "type": "select",
+        "label": "What is your age range?",
+        "options": [
+          { "value": "under_18", "label": "Under 18" },
+          { "value": "18_21", "label": "18-21" },
+          { "value": "22_25", "label": "22-25" },
+          { "value": "26_35", "label": "26-35" },
+          { "value": "36_45", "label": "36-45" },
+          { "value": "46_60", "label": "46-60" },
+          { "value": "above_60", "label": "Above 60" }
+        ],    
+        "required": true
+      },
+      {
+        "id": "q3",
+        "type": "text",
+        "label": "What is your occupation?",
+        "required": false,
+        "conditions": {
+          "q2": ["18_21", "22_25", "26_35", "36_45", "46_60", "above_60"]
+        }
+      },
+      {
+        "id": "q4",
+        "type": "text",
+        "label": "What is your school name?",
+        "required": false,
+        "conditions": {
+          "q2": ["under_18"]
+        }
+      },
+      {
+        "id": "q5",
+        "type": "radio",
+        "label": "Do you have any dependents?",
+        "options": [
+          { "value": "yes", "label": "Yes" },
+          { "value": "no", "label": "No" }
+        ],
+        "required": true,
+        "conditions": {
+          "q2": ["22_25", "26_35", "36_45", "46_60", "above_60"]
+        }
+      },
+      {
+        "id": "q6",
+        "type": "text",
+        "label": "How many dependents do you have?",
+        "required": true,
+        "conditions": {
+          "q5": ["yes"]
+        }
+      },
+      {
+        "id": "q7",
+        "type": "text",
+        "label": "What is your email address?",
+        "required": true
+      },
+      {
+        "id": "q8",
+        "type": "text",
+        "label": "What is your phone number?",
+        "required": false
+      },
+      {
+        "id": "q9",
+        "type": "select",
+        "label": "What is your highest level of education?",
+        "options": [
+          { "value": "high_school", "label": "High School" },
+          { "value": "bachelors", "label": "Bachelor's Degree" },
+          { "value": "masters", "label": "Master's Degree" },
+          { "value": "phd", "label": "PhD" }
+        ],
+        "required": true
+      },
+      {
+        "id": "q10",
+        "type": "text",
+        "label": "What is your address?",
+        "required": true
+      },
+      {
+        "id": "q11",
+        "type": "radio",
+        "label": "Do you own a vehicle?",
+        "options": [
+          { "value": "yes", "label": "Yes" },
+          { "value": "no", "label": "No" }
+        ],
+        "required": false
+      },
+      {
+        "id": "q12",
+        "type": "text",
+        "label": "What is the make and model of your vehicle?",
+        "required": false,
+        "conditions": {
+          "q11": ["yes"]
+        }
+      },
+      {
+        "id": "q13",
+        "type": "radio",
+        "label": "Do you have any pets?",
+        "options": [
+          { "value": "yes", "label": "Yes" },
+          { "value": "no", "label": "No" }
+        ],
+        "required": false
+      },
+      {
+        "id": "q14",
+        "type": "text",
+        "label": "What type of pets do you have?",
+        "required": false,
+        "conditions": {
+          "q13": ["yes"]
+        }
+      },
+      {
+        "id": "q15",
+        "type": "radio",
+        "label": "Do you have any allergies?",
+        "options": [
+          { "value": "yes", "label": "Yes" },
+          { "value": "no", "label": "No" }
+        ],
+        "required": false
+      },
+      {
+        "id": "q16",
+        "type": "text",
+        "label": "Please list your allergies.",
+        "required": false,
+        "conditions": {
+          "q15": ["yes"]
+        }
+      }
+    ]
+  }
